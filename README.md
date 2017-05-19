@@ -9,4 +9,3 @@ The program will ask for the following options before starting:
 3. The string to search for
 4. If it should search in value names, value data, or both
 
-**This version was rewritten and has yet to be tested on a live computer.**

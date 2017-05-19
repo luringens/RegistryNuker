@@ -28,7 +28,8 @@ namespace RegistryNuker
         private static void Main()
         {
             // Select a base key
-            Console.WriteLine("This program will search for a keyword and delete every key that contains it. USE WITH CARE, THIS CAN AND WILL WRECK WINDOWS.");
+            Console.WriteLine("This program will search for a keyword and delete every key that contains it.\n");
+            Console.WriteLine("USE WITH CARE, THIS CAN AND WILL WRECK WINDOWS GIVEN THE WRONG INPUT.");
             Console.WriteLine("Select a base key to search through: ");
             Console.WriteLine("1: CurrentUser");
             Console.WriteLine("2: LocalMachine");
@@ -43,7 +44,7 @@ namespace RegistryNuker
 
             // Mode selection
             Console.WriteLine("Select a mode:");
-            Console.WriteLine("1: Dry run      - list all matches");
+            Console.WriteLine("1: Dry run      - list all matches. Do this first");
             Console.WriteLine("2: Manual mode  - asks if you want to delete each key");
             Console.WriteLine("3: Nuclear mode - delete all matches without confirmation");
             var modeInput = GetInput(new[] { "1", "2", "3" });
@@ -55,11 +56,12 @@ namespace RegistryNuker
             }
 
             // Search string
-            Console.WriteLine("Enter a search string to delete matches for. Not case sensitive. BE CAREFUL!!!");
+            Console.WriteLine("Enter a search string to look for. Not case sensitive. BE CAREFUL!");
+            Console.WriteLine("If your term can be a substring of something generic, you will be in trouble.");
             searchString = GetInput().ToLowerInvariant();
             
             // Search mode
-            Console.WriteLine("Select a search mode.");
+            Console.WriteLine("Select a search mode:");
             Console.WriteLine("1: Search in value names");
             Console.WriteLine("2: Search in value data");
             Console.WriteLine("3: Search in both");
