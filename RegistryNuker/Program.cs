@@ -127,8 +127,8 @@ namespace RegistryNuker
                         if (!valueData.ToLowerInvariant().Contains(searchString)) continue;
                         break;
                     case SearchMode.Both:
-                        if (!valueData.ToLowerInvariant().Contains(searchString)) continue;
-                        if (!valueName.ToLowerInvariant().Contains(searchString)) continue;
+                        if (!valueData.ToLowerInvariant().Contains(searchString) &&
+                            !valueName.ToLowerInvariant().Contains(searchString)) continue;
                         break;
                 }
 
